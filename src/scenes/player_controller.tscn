@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bds7uk145jpyy"]
+
+[ext_resource type="Script" uid="uid://cydf878ar12eq" path="res://scripts/PlayerController.cs" id="1_d4y06"]
+[ext_resource type="Texture2D" uid="uid://dhfy367m258px" path="res://assets/rocket.png" id="2_6agyq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hnk6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(12, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnk6x"]
+
+[node name="PlayerController" type="RigidBody2D" unique_id=1782223697]
+physics_material_override = SubResource("PhysicsMaterial_hnk6x")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_d4y06")
+
+[node name="RocketSprite" type="Sprite2D" parent="." unique_id=1329745053]
+texture = ExtResource("2_6agyq")
+
+[node name="RocketCollisionShape" type="CollisionShape2D" parent="." unique_id=858988339]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1692845738]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="BulletMarker" type="Marker2D" parent="." unique_id=1479091329]
+position = Vector2(0, -4)
+
+[node name="RenderingCheck" type="Area2D" parent="." unique_id=92655530]
+scale = Vector2(30, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RenderingCheck" unique_id=1289005613]
+scale = Vector2(0.9455598, 0.87754697)
+shape = SubResource("RectangleShape2D_hnk6x")
+debug_color = Color(0.9829939, 0, 0.36140397, 0.41960785)
+
+[node name="ThrusterParticles" type="CPUParticles2D" parent="." unique_id=1710096688]
+modulate = Color(1, 0.64705884, 0, 1)
+position = Vector2(0, 6)
+emission_shape = 2
+emission_sphere_radius = 4.0

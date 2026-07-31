@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c33hi5e4k3fly"]
+
+[ext_resource type="Texture2D" uid="uid://k3dcnbc4edl7" path="res://assets/bullet.png" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://o6svypnymrco" path="res://scripts/Bullet.cs" id="1_y25gk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6agyq"]
+bounce = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1aey"]
+size = Vector2(2, 2)
+
+[node name="Bullet" type="RigidBody2D" unique_id=835581541]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_6agyq")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_y25gk")
+
+[node name="BulletSprite" type="Sprite2D" parent="." unique_id=1690979900]
+texture = ExtResource("1_mkf8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1599284328]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_h1aey")

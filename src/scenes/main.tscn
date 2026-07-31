@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://155xx7s6y6ta"]
+
+[ext_resource type="Script" uid="uid://23nvrpmtlfq" path="res://scripts/Main.cs" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bds7uk145jpyy" path="res://scenes/player_controller.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://ce7qk42k1cecj" path="res://assets/background/background.png" id="2_sugp2"]
+
+[node name="Main" type="Node2D" unique_id=480581671]
+script = ExtResource("1_o5qli")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=170746836]
+repeat_size = Vector2(512, 256)
+repeat_times = 3
+
+[node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=1136578519]
+texture = ExtResource("2_sugp2")
+
+[node name="PlayerController" parent="." unique_id=456092062 instance=ExtResource("2_0wfyh")]
