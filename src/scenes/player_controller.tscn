@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cydf878ar12eq" path="res://scripts/PlayerController.cs" id="1_d4y06"]
 [ext_resource type="Texture2D" uid="uid://dhfy367m258px" path="res://assets/rocket.png" id="2_6agyq"]
+[ext_resource type="Material" uid="uid://dqpbtig6nrore" path="res://resources/fire_particle_process_material.tres" id="3_8xumb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hnk6x"]
 
@@ -34,12 +35,14 @@ position = Vector2(0, -4)
 scale = Vector2(30, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RenderingCheck" unique_id=1289005613]
-scale = Vector2(0.9455598, 0.87754697)
 shape = SubResource("RectangleShape2D_hnk6x")
-debug_color = Color(0.9829939, 0, 0.36140397, 0.41960785)
+debug_color = Color(0.9843137, 0, 0.36078432, 0.41960785)
 
-[node name="ThrusterParticles" type="CPUParticles2D" parent="." unique_id=1710096688]
-modulate = Color(1, 0.64705884, 0, 1)
+[node name="ThrusterParticles" type="GPUParticles2D" parent="." unique_id=1795076244]
 position = Vector2(0, 6)
-emission_shape = 2
-emission_sphere_radius = 4.0
+amount = 1
+lifetime = 0.09999999999999999
+fixed_fps = 0
+local_coords = true
+draw_order = 0
+process_material = ExtResource("3_8xumb")

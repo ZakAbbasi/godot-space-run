@@ -14,7 +14,8 @@ public partial class GameManager : Node
     
     private int _playerScore;
     private float _playerHealth;
-    
+
+    public PlayerController player;
     public Main MainNode;
     
     public override void _Ready()

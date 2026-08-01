@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://11wq7f6h75ce"]
+
+[ext_resource type="Script" uid="uid://c7oornhsxbn08" path="res://scripts/EnemyController.cs" id="1_ismwn"]
+[ext_resource type="Texture2D" uid="uid://cfpotecw626dh" path="res://assets/enemy_ship.png" id="1_vx4bm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qkpqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ismwn"]
+radius = 5.0990195
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnk6x"]
+
+[node name="EnemyController" type="RigidBody2D" unique_id=848363845]
+physics_material_override = SubResource("PhysicsMaterial_qkpqy")
+script = ExtResource("1_ismwn")
+
+[node name="EnemySprite" type="Sprite2D" parent="." unique_id=1172945751]
+texture = ExtResource("1_vx4bm")
+
+[node name="EnemyCollisionShape" type="CollisionShape2D" parent="." unique_id=1871693333]
+shape = SubResource("CircleShape2D_ismwn")
+
+[node name="BulletMarker" type="Marker2D" parent="." unique_id=1811459230]
+position = Vector2(5, 0)
+
+[node name="PatrollingArea" type="Area2D" parent="." unique_id=1050456657]
+scale = Vector2(7, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PatrollingArea" unique_id=932061531]
+shape = SubResource("RectangleShape2D_hnk6x")
+debug_color = Color(0.9843137, 0, 0.36078432, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1075751498]
+position = Vector2(5, 0)
+rotation = -1.5707964
+target_position = Vector2(0, 30)
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=717087879]

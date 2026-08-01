@@ -1,0 +1,74 @@
+{
+	"categories": [
+		{
+			"uuid": "074f07d0-7165-453b-aa0a-d22821282832",
+			"title": "Task",
+			"color": "0a60ff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "27bff361-6ca1-48a4-9a7d-584fff5073f0",
+			"title": "Todo",
+			"tasks": [
+				"fe791b28-6a7a-4207-bbda-0b4a8e7484fa",
+				"35345251-7a4b-4318-8e4c-17fcf4e2337a",
+				"439b6112-a704-4e5b-b7bc-d36cfe6fce98",
+				"df7e225f-0701-4809-bf5a-a4f5805a4372"
+			]
+		},
+		{
+			"uuid": "fce795f8-b871-4ca2-a8fa-57705535ac03",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "7052bd10-3101-4bcf-b30b-3b5943392234",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "fe791b28-6a7a-4207-bbda-0b4a8e7484fa",
+			"title": "Add spawning system",
+			"description": "",
+			"category": "074f07d0-7165-453b-aa0a-d22821282832",
+			"steps": []
+		},
+		{
+			"uuid": "35345251-7a4b-4318-8e4c-17fcf4e2337a",
+			"title": "Finish basic hit detection ",
+			"description": "",
+			"category": "074f07d0-7165-453b-aa0a-d22821282832",
+			"steps": []
+		},
+		{
+			"uuid": "439b6112-a704-4e5b-b7bc-d36cfe6fce98",
+			"title": "Add simple score and health UI",
+			"description": "",
+			"category": "074f07d0-7165-453b-aa0a-d22821282832",
+			"steps": []
+		},
+		{
+			"uuid": "df7e225f-0701-4809-bf5a-a4f5805a4372",
+			"title": "Add asteroids to destroy",
+			"description": "",
+			"category": "074f07d0-7165-453b-aa0a-d22821282832",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"27bff361-6ca1-48a4-9a7d-584fff5073f0"
+			],
+			[
+				"fce795f8-b871-4ca2-a8fa-57705535ac03"
+			],
+			[
+				"7052bd10-3101-4bcf-b30b-3b5943392234"
+			]
+		]
+	}
+}
