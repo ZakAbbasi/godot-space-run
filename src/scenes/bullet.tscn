@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c33hi5e4k3fly"]
 
-[ext_resource type="Texture2D" uid="uid://k3dcnbc4edl7" path="res://assets/bullet.png" id="1_mkf8s"]
+[ext_resource type="Texture2D" uid="uid://k3dcnbc4edl7" path="res://assets/entity/bullet.png" id="1_mkf8s"]
 [ext_resource type="Script" uid="uid://o6svypnymrco" path="res://scripts/Bullet.cs" id="1_y25gk"]
 [ext_resource type="PackedScene" uid="uid://dw2pkrwdqaq81" path="res://scenes/impact_particle.tscn" id="3_l5glv"]
 [ext_resource type="Material" uid="uid://dqpbtig6nrore" path="res://resources/fire_particle_process_material.tres" id="4_eoqba"]
@@ -27,8 +27,6 @@ shape = SubResource("RectangleShape2D_h1aey")
 
 [node name="ImpactParticle" parent="." unique_id=399574985 instance=ExtResource("3_l5glv")]
 position = Vector2(0, 1)
-emitting = false
-one_shot = true
 
 [node name="MuzzleParticle" type="GPUParticles2D" parent="." unique_id=386419724]
 emitting = false

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://11wq7f6h75ce"]
 
 [ext_resource type="Script" uid="uid://c7oornhsxbn08" path="res://scripts/EnemyController.cs" id="1_ismwn"]
-[ext_resource type="Texture2D" uid="uid://cfpotecw626dh" path="res://assets/enemy_ship.png" id="1_vx4bm"]
+[ext_resource type="Texture2D" uid="uid://cfpotecw626dh" path="res://assets/entity/enemy_ship.png" id="1_vx4bm"]
 [ext_resource type="PackedScene" uid="uid://bmw7uarto6l86" path="res://scenes/thruster_particles.tscn" id="3_snvh3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qkpqy"]

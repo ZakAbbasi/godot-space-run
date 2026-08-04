@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyblmtmxwrpa0"
-path="res://.godot/imported/Free Smoke Fx  Pixel 07.png-f8f517ea6983fc01fc93825fc6ee2029.ctex"
+uid="uid://bn2ggjksabliv"
+path="res://.godot/imported/health_bar_progress.png-c222bac79cffb40d0ebaa35730458dc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free Smoke Fx  Pixel 07.png"
-dest_files=["res://.godot/imported/Free Smoke Fx  Pixel 07.png-f8f517ea6983fc01fc93825fc6ee2029.ctex"]
+source_file="res://assets/ui/health_bar_progress.png"
+dest_files=["res://.godot/imported/health_bar_progress.png-c222bac79cffb40d0ebaa35730458dc6.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bds7uk145jpyy"]
 
 [ext_resource type="Script" uid="uid://cydf878ar12eq" path="res://scripts/PlayerController.cs" id="1_d4y06"]
-[ext_resource type="Texture2D" uid="uid://dhfy367m258px" path="res://assets/rocket.png" id="2_6agyq"]
+[ext_resource type="Texture2D" uid="uid://dhfy367m258px" path="res://assets/player/rocket.png" id="2_6agyq"]
 [ext_resource type="PackedScene" uid="uid://bmw7uarto6l86" path="res://scenes/thruster_particles.tscn" id="3_8xumb"]
-[ext_resource type="Texture2D" uid="uid://dg6dp7ruq67w1" path="res://assets/health_bar_under.png" id="4_jh7gh"]
-[ext_resource type="Texture2D" uid="uid://bn2ggjksabliv" path="res://assets/health_bar_progress.png" id="5_uxksl"]
-[ext_resource type="FontFile" uid="uid://btpouup47bq3i" path="res://assets/m5x7.ttf" id="6_0c017"]
+[ext_resource type="Texture2D" uid="uid://dg6dp7ruq67w1" path="res://assets/ui/health_bar_under.png" id="4_jh7gh"]
+[ext_resource type="Texture2D" uid="uid://bn2ggjksabliv" path="res://assets/ui/health_bar_progress.png" id="5_uxksl"]
+[ext_resource type="FontFile" uid="uid://btpouup47bq3i" path="res://assets/ui/m5x7.ttf" id="6_0c017"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hnk6x"]
 
@@ -16,6 +16,12 @@ size = Vector2(12, 10)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hnk6x"]
 font = ExtResource("6_0c017")
+
+[sub_resource type="Curve2D" id="Curve2D_hnk6x"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -130, -83.99999, 0, 0, 0, 0, 131, -84, 0, 0, 0, 0, 131, 75.99999, 0, 0, 0, 0, -130.9962, 76.00001, 0, 0, 0, 0, -130, -83.99999)
+}
+point_count = 5
 
 [node name="PlayerController" type="RigidBody2D" unique_id=1782223697]
 physics_material_override = SubResource("PhysicsMaterial_hnk6x")
@@ -70,3 +76,13 @@ text = "SCORE"
 label_settings = SubResource("LabelSettings_hnk6x")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Path2D" type="Path2D" parent="." unique_id=685620102]
+position = Vector2(-2.5021884, 3.4499912)
+scale = Vector2(1.1488715, 1.1125002)
+curve = SubResource("Curve2D_hnk6x")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1523559500]
+position = Vector2(-130, -83.99999)
+
+[node name="Marker2D" type="Marker2D" parent="Path2D/PathFollow2D" unique_id=1585184125]

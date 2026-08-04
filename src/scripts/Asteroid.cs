@@ -6,9 +6,13 @@ public partial class Asteroid : RigidBody2D
     public float healingAmount = 5f;
     public float _scaleAmount;
 
+    private Vector2 iniMovement = new Vector2(0, -1);
+    private float Speed = 75;
+    
     public override void _Ready()
     {
         AddToGroup("asteroid");
+        MoveToCenter();
         
         _scaleAmount = (int)GD.RandRange(1, 3.0);
         Scale *= _scaleAmount;
@@ -30,5 +34,11 @@ public partial class Asteroid : RigidBody2D
         {
             
         }
+    }
+
+
+    public void MoveToCenter()
+    {
+        ApplyImpulse(iniMovement.Rotated(Rotation) * Speed, GetViewportRect().GetCenter());
     }
 }

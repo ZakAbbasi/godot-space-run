@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg6dp7ruq67w1"
-path="res://.godot/imported/health_bar_under.png-a2b310a2f3c040912cf3fe72430f7009.ctex"
+uid="uid://dhfy367m258px"
+path="res://.godot/imported/rocket.png-eea120a1ff32f059cf09ee54828415d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/health_bar_under.png"
-dest_files=["res://.godot/imported/health_bar_under.png-a2b310a2f3c040912cf3fe72430f7009.ctex"]
+source_file="res://assets/player/rocket.png"
+dest_files=["res://.godot/imported/rocket.png-eea120a1ff32f059cf09ee54828415d4.ctex"]
 
 [params]
 

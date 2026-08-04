@@ -11,7 +11,6 @@
 			"uuid": "27bff361-6ca1-48a4-9a7d-584fff5073f0",
 			"title": "Todo",
 			"tasks": [
-				"df7e225f-0701-4809-bf5a-a4f5805a4372",
 				"8a4b95dd-5bee-4185-bcd5-e7d9bd4d447e"
 			]
 		},
@@ -19,8 +18,8 @@
 			"uuid": "fce795f8-b871-4ca2-a8fa-57705535ac03",
 			"title": "Doing",
 			"tasks": [
-				"b2f0220e-0493-4c62-be90-1a0d60276c95",
-				"fe791b28-6a7a-4207-bbda-0b4a8e7484fa"
+				"fe791b28-6a7a-4207-bbda-0b4a8e7484fa",
+				"24040889-6c89-4cd2-97fb-ccd249441176"
 			]
 		},
 		{
@@ -36,7 +35,7 @@
 		{
 			"uuid": "fe791b28-6a7a-4207-bbda-0b4a8e7484fa",
 			"title": "Improve Spawning System",
-			"description": "Figure out a way to continually spawn enemies and make it progressively harder each time. Make it so they dont bunch together and spawn in random areas outside of the viewport\n",
+			"description": "Make them spawn consistently. Have a UI indicator for how many enemies or what wave the player is on",
 			"category": "074f07d0-7165-453b-aa0a-d22821282832",
 			"steps": []
 		},
@@ -57,7 +56,7 @@
 		{
 			"uuid": "df7e225f-0701-4809-bf5a-a4f5805a4372",
 			"title": "Add asteroids to destroy",
-			"description": "",
+			"description": "Make them different sizes and make them split into fragments\n",
 			"category": "074f07d0-7165-453b-aa0a-d22821282832",
 			"steps": []
 		},
@@ -69,9 +68,9 @@
 			"steps": []
 		},
 		{
-			"uuid": "b2f0220e-0493-4c62-be90-1a0d60276c95",
-			"title": "Add enemy indicators off screen",
-			"description": "A way for the player to keep track of where the enemies are",
+			"uuid": "24040889-6c89-4cd2-97fb-ccd249441176",
+			"title": "Add powerups for player",
+			"description": "Create different asteroids that have different powerups when you shoot them. Maybe they can have different rarities or something",
 			"category": "074f07d0-7165-453b-aa0a-d22821282832",
 			"steps": []
 		}

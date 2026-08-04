@@ -34,6 +34,12 @@ public partial class PlayerController : RigidBody2D
     public Area2D _renderingArea;
     public Camera2D _playerCamera;
     
+    /**************FOR SPAWNING********/
+    public Path2D spawnPath;
+    public PathFollow2D spawnPathFollow;
+    public Marker2D spawnPathMarker;
+    /**********************************/
+    
     private GpuParticles2D _thrusterParticles;
     private int _thrusterParticlesAmount = 1;
 
@@ -57,6 +63,10 @@ public partial class PlayerController : RigidBody2D
         _thrusterParticles = GetNode<GpuParticles2D>("ThrusterParticles");
         _healthBar = GetNode<TextureProgressBar>("PlayerUI/TextureProgressBar");
         _scoreBar = GetNode<Label>("PlayerUI/Label");
+
+        spawnPath = GetNode<Path2D>("Path2D");
+        spawnPathFollow = GetNode<PathFollow2D>("Path2D/PathFollow2D");
+        spawnPathMarker = GetNode<Marker2D>("Path2D/PathFollow2D/Marker2D");
         
         EventBus.Instance.PlayerShoot += OnPlayerShoot;
         EventBus.Instance.DamageTaken += OnPlayerDamaged;

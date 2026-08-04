@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw7geyxpmc86d"]
 
 [ext_resource type="Script" uid="uid://dcuc7tqr0og0t" path="res://scripts/Asteroid.cs" id="1_6mo6b"]
-[ext_resource type="Texture2D" uid="uid://bvfkaou2ekynj" path="res://assets/asteroid.png" id="1_akfqu"]
+[ext_resource type="Texture2D" uid="uid://bvfkaou2ekynj" path="res://assets/entity/asteroid.png" id="1_akfqu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t4se3"]
 
