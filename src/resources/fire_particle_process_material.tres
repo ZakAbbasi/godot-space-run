@@ -12,5 +12,7 @@ particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 2.9
 gravity = Vector3(0, 980, 0)
+scale_max = 2.0
+scale_over_velocity_max = 2.0
 color = Color(1, 0.64705884, 0, 1)
 color_ramp = SubResource("GradientTexture1D_6agyq")

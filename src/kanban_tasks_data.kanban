@@ -11,35 +11,39 @@
 			"uuid": "27bff361-6ca1-48a4-9a7d-584fff5073f0",
 			"title": "Todo",
 			"tasks": [
-				"fe791b28-6a7a-4207-bbda-0b4a8e7484fa",
-				"35345251-7a4b-4318-8e4c-17fcf4e2337a",
-				"439b6112-a704-4e5b-b7bc-d36cfe6fce98",
-				"df7e225f-0701-4809-bf5a-a4f5805a4372"
+				"df7e225f-0701-4809-bf5a-a4f5805a4372",
+				"8a4b95dd-5bee-4185-bcd5-e7d9bd4d447e"
 			]
 		},
 		{
 			"uuid": "fce795f8-b871-4ca2-a8fa-57705535ac03",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"b2f0220e-0493-4c62-be90-1a0d60276c95",
+				"fe791b28-6a7a-4207-bbda-0b4a8e7484fa"
+			]
 		},
 		{
 			"uuid": "7052bd10-3101-4bcf-b30b-3b5943392234",
 			"title": "Done",
-			"tasks": []
+			"tasks": [
+				"35345251-7a4b-4318-8e4c-17fcf4e2337a",
+				"439b6112-a704-4e5b-b7bc-d36cfe6fce98"
+			]
 		}
 	],
 	"tasks": [
 		{
 			"uuid": "fe791b28-6a7a-4207-bbda-0b4a8e7484fa",
-			"title": "Add spawning system",
-			"description": "",
+			"title": "Improve Spawning System",
+			"description": "Figure out a way to continually spawn enemies and make it progressively harder each time. Make it so they dont bunch together and spawn in random areas outside of the viewport\n",
 			"category": "074f07d0-7165-453b-aa0a-d22821282832",
 			"steps": []
 		},
 		{
 			"uuid": "35345251-7a4b-4318-8e4c-17fcf4e2337a",
 			"title": "Finish basic hit detection ",
-			"description": "",
+			"description": "Make the enemies explode on bullet impact. Impact FX. Make the players take damage correctly.\n",
 			"category": "074f07d0-7165-453b-aa0a-d22821282832",
 			"steps": []
 		},
@@ -54,6 +58,20 @@
 			"uuid": "df7e225f-0701-4809-bf5a-a4f5805a4372",
 			"title": "Add asteroids to destroy",
 			"description": "",
+			"category": "074f07d0-7165-453b-aa0a-d22821282832",
+			"steps": []
+		},
+		{
+			"uuid": "8a4b95dd-5bee-4185-bcd5-e7d9bd4d447e",
+			"title": "Revise my design and planning",
+			"description": "After completing research and read on what I could have done better\n",
+			"category": "074f07d0-7165-453b-aa0a-d22821282832",
+			"steps": []
+		},
+		{
+			"uuid": "b2f0220e-0493-4c62-be90-1a0d60276c95",
+			"title": "Add enemy indicators off screen",
+			"description": "A way for the player to keep track of where the enemies are",
 			"category": "074f07d0-7165-453b-aa0a-d22821282832",
 			"steps": []
 		}

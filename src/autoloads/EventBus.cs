@@ -8,8 +8,7 @@ using Godot;
 public partial class EventBus : Node
 {
     [Signal]
-    public delegate void ScoreUpdatedEventHandler(int scoreValue);
-
+    public delegate void ScoreUpdatedEventHandler(float scoreValue);
     
     // TODO --> MAKE IT SO I CAN USE THIS FOR ENEMIES AND PLAYER ALSO, ANOTHER ARGUMENT NODE2D?
     [Signal]
@@ -18,6 +17,11 @@ public partial class EventBus : Node
     [Signal]
     public delegate void PlayerShootEventHandler();
 
+    [Signal]
+    public delegate void PlayerHealedEventHandler(float healValue);
+    
+    [Signal]
+    public delegate void EnemySpawnedEventHandler();
 
     public static EventBus Instance { get; private set; }
 

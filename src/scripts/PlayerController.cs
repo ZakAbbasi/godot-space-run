@@ -1,6 +1,5 @@
 using Godot;
-using System;
-using System.Numerics;
+using System.Collections.Generic;
 using Vector2 = Godot.Vector2;
 
 /*
@@ -11,20 +10,36 @@ using Vector2 = Godot.Vector2;
 public partial class PlayerController : RigidBody2D
 {   
     /* VARIABLE DECLARATION */
-    private float _playerSpeed = 25;
-    private float _playerTorque = 45;
-    private float _playerBulletSpeed = 75;
+    private float _playerSpeed = 75;
+    private float _playerTorque = 200;
+    private float _playerBulletSpeed = 150;
+    
+    
     private float _playerHealth = 100;
+    public float PlayerHealth
+    {
+        get => _playerHealth;
+        set => _playerHealth = Mathf.Clamp(value, 0, 100);
+    }
+    
+    
+    private float _playerScore = 0;
+
     private Vector2 _playerThrust = new Vector2(0, -1);
+
+    private TextureProgressBar _healthBar;
+    private Label _scoreBar;
     
     private Marker2D _bulletMarker;
-    private Area2D _renderingArea;
+    public Area2D _renderingArea;
+    public Camera2D _playerCamera;
     
     private GpuParticles2D _thrusterParticles;
-
     private int _thrusterParticlesAmount = 1;
+
+    public List<EnemyController> enemyCount;
     
-    private int thrusterParticlesAmount
+    public int thrusterParticlesAmount
     {
         get => _thrusterParticlesAmount;
         set => _thrusterParticlesAmount = Mathf.Clamp(value, 1, 55);
@@ -38,13 +53,21 @@ public partial class PlayerController : RigidBody2D
         
         _bulletMarker = GetNode<Marker2D>("BulletMarker");
         _renderingArea = GetNode<Area2D>("RenderingCheck");
+        _playerCamera = GetNode<Camera2D>("PlayerCamera");
         _thrusterParticles = GetNode<GpuParticles2D>("ThrusterParticles");
+        _healthBar = GetNode<TextureProgressBar>("PlayerUI/TextureProgressBar");
+        _scoreBar = GetNode<Label>("PlayerUI/Label");
         
         EventBus.Instance.PlayerShoot += OnPlayerShoot;
-        EventBus.Instance.DamageTaken += PlayerDamaged;
+        EventBus.Instance.DamageTaken += OnPlayerDamaged;
+        EventBus.Instance.PlayerHealed += OnPlayerHealed;
+        EventBus.Instance.ScoreUpdated += OnScoreUpdated;
+        
         _renderingArea.BodyExited += OnBodyExited;
 
         _thrusterParticles.Emitting = false;
+        _healthBar.Value = _playerHealth;
+        _scoreBar.Text = _playerScore.ToString();
     }
     
     
@@ -81,6 +104,9 @@ public partial class PlayerController : RigidBody2D
 
         if (Input.IsActionJustReleased("up"))
         {
+            Vector2 forwardForce = _playerThrust * _playerSpeed * -1;
+            ApplyForce(forwardForce.Rotated(Rotation));
+            
             thrusterParticlesAmount--;
             _thrusterParticles.Amount = thrusterParticlesAmount;
             _thrusterParticles.Emitting = false;
@@ -89,7 +115,7 @@ public partial class PlayerController : RigidBody2D
         // BACKWARD
         if (Input.IsActionPressed("down"))
         {
-            Vector2 backwardForce = -1 * _playerThrust * _playerSpeed;
+            Vector2 backwardForce = -0.5f * _playerThrust * _playerSpeed;
             ApplyForce(backwardForce.Rotated(Rotation));
 
             _thrusterParticles.Explosiveness = 5f;
@@ -116,20 +142,40 @@ public partial class PlayerController : RigidBody2D
         Vector2 forwardForce = _playerThrust * _playerBulletSpeed; // DOWN IS UP
         bulletScene.ApplyImpulse(forwardForce.Rotated(Rotation));
     }
-
-
+    
+    
+    
     private void OnBodyExited(Node2D body)
     {
-        if (body.IsInGroup("bullet"))
+        if (body.IsInGroup("bullet") || body.IsInGroup("enemy_bullet"))
         {
             body.QueueFree();
         }
     }
     
     
-    private void PlayerDamaged(float damage)
+    private void OnPlayerDamaged(float damage)
     {
-        _playerHealth -= damage;
-        GD.Print("DAMAGE TAKEN");
+        PlayerHealth -= damage;
+        _healthBar.Value = _playerHealth;
+
+        if (PlayerHealth <= 0)
+        {
+            Godot.GD.Print("PLAYER DEAD");
+        }
+    }
+
+
+    private void OnPlayerHealed(float health)
+    {
+        PlayerHealth += health;
+        _healthBar.Value = _playerHealth;
+    }
+    
+
+    private void OnScoreUpdated(float value)
+    {
+        _playerScore += value;
+        _scoreBar.Text = _playerScore.ToString();
     }
 }

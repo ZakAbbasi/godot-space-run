@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cydf878ar12eq" path="res://scripts/PlayerController.cs" id="1_d4y06"]
 [ext_resource type="Texture2D" uid="uid://dhfy367m258px" path="res://assets/rocket.png" id="2_6agyq"]
-[ext_resource type="Material" uid="uid://dqpbtig6nrore" path="res://resources/fire_particle_process_material.tres" id="3_8xumb"]
+[ext_resource type="PackedScene" uid="uid://bmw7uarto6l86" path="res://scenes/thruster_particles.tscn" id="3_8xumb"]
+[ext_resource type="Texture2D" uid="uid://dg6dp7ruq67w1" path="res://assets/health_bar_under.png" id="4_jh7gh"]
+[ext_resource type="Texture2D" uid="uid://bn2ggjksabliv" path="res://assets/health_bar_progress.png" id="5_uxksl"]
+[ext_resource type="FontFile" uid="uid://btpouup47bq3i" path="res://assets/m5x7.ttf" id="6_0c017"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hnk6x"]
 
@@ -11,10 +14,15 @@ size = Vector2(12, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnk6x"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_hnk6x"]
+font = ExtResource("6_0c017")
+
 [node name="PlayerController" type="RigidBody2D" unique_id=1782223697]
 physics_material_override = SubResource("PhysicsMaterial_hnk6x")
 contact_monitor = true
 max_contacts_reported = 1
+linear_damp = 0.5
+angular_damp = 0.75
 script = ExtResource("1_d4y06")
 
 [node name="RocketSprite" type="Sprite2D" parent="." unique_id=1329745053]
@@ -38,11 +46,27 @@ scale = Vector2(30, 18)
 shape = SubResource("RectangleShape2D_hnk6x")
 debug_color = Color(0.9843137, 0, 0.36078432, 0.41960785)
 
-[node name="ThrusterParticles" type="GPUParticles2D" parent="." unique_id=1795076244]
+[node name="ThrusterParticles" parent="." unique_id=1604304282 instance=ExtResource("3_8xumb")]
 position = Vector2(0, 6)
-amount = 1
-lifetime = 0.09999999999999999
-fixed_fps = 0
-local_coords = true
-draw_order = 0
-process_material = ExtResource("3_8xumb")
+
+[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1338844824]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="PlayerUI" unique_id=1647099925]
+modulate = Color(1, 1, 1, 0.78431374)
+offset_left = 135.0
+offset_top = 3.0
+offset_right = 255.0
+offset_bottom = 43.0
+step = 10.0
+texture_under = ExtResource("4_jh7gh")
+texture_progress = ExtResource("5_uxksl")
+texture_progress_offset = Vector2(10, 0)
+
+[node name="Label" type="Label" parent="PlayerUI" unique_id=337878701]
+offset_top = 104.0
+offset_right = 51.0
+offset_bottom = 144.0
+text = "SCORE"
+label_settings = SubResource("LabelSettings_hnk6x")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://23nvrpmtlfq" path="res://scripts/Main.cs" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bds7uk145jpyy" path="res://scenes/player_controller.tscn" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://ce7qk42k1cecj" path="res://assets/background/background.png" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://11wq7f6h75ce" path="res://scenes/enemy_controller.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=480581671]
 script = ExtResource("1_o5qli")
@@ -16,6 +15,3 @@ repeat_times = 3
 texture = ExtResource("2_sugp2")
 
 [node name="PlayerController" parent="." unique_id=456092062 instance=ExtResource("2_0wfyh")]
-
-[node name="EnemyController" parent="." unique_id=848363845 instance=ExtResource("4_jyhfs")]
-position = Vector2(-2, -91)
